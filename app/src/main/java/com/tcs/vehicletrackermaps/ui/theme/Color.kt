@@ -1,4 +1,4 @@
-package com.tcs.vehicletrackermaps.ui.theme
+package com.us.vehicletracker.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

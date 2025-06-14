@@ -1,4 +1,4 @@
-package com.tcs.vehicletrackermaps.ui.theme
+package com.us.vehicletracker.ui.theme
 
 import android.app.Activity
 import android.os.Build
@@ -34,7 +34,7 @@ private val LightColorScheme = lightColorScheme(
 )
 
 @Composable
-fun VehicleTrackerMapsTheme(
+fun VehicleTrackerTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
