@@ -7,8 +7,23 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.9.1"
 activityCompose = "1.10.1"
+# Use the latest stable Compose BOM for consistent Compose library versions.
+# As of current date (June 2025), 2024.09.00 is still a valid recent BOM.
 composeBom = "2024.09.00"
+# For Material Icons Extended (e.g., Icons.Filled.Add)
 materialIconsExtended = "1.7.8"
+# Maps Compose library
+mapsCompose = "6.6.0"
+# Core Google Play Services Maps
+playServicesMaps = "19.2.0"
+# Standard Compose Navigation (not jvmstubs)
+navigationCompose = "2.9.0" # Renamed from navigationComposeJvmstubs
+# ViewModel utilities for Compose
+lifecycleViewmodelCompose = "2.9.1"
+# Google Places SDK
+places = "4.3.1"
+# Material Components for Android (for XML-based themes/styles, if still used)
+material = "1.12.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -17,7 +32,11 @@ androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "j
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+
+# Compose BOM - Defines compatible versions for Compose libraries
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+
+# Compose UI libraries (versions managed by composeBom)
 androidx-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
@@ -27,8 +46,24 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended", version.ref = "materialIconsExtended" }
 
+# Google Maps and Places
+maps-compose = { group = "com.google.maps.android", name = "maps-compose", version.ref = "mapsCompose" }
+play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "playServicesMaps" }
+places = { group = "com.google.android.libraries.places", name = "places", version.ref = "places" }
+
+# Compose Navigation
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" } # Corrected artifact name
+
+# ViewModel for Compose
+androidx-lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycleViewmodelCompose" }
+
+# Material Components for Android (for XML theming, e.g., in themes.xml)
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+# For enabling the Compose compiler plugin.
+# This often implies the `kotlinCompilerExtensionVersion` in build.gradle.kts is handled automatically
+# or should be explicitly set based on the compatibility matrix.
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-
