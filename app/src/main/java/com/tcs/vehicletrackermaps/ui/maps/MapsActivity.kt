@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.us.vehicletracker.maps
+package com.tcs.vehicletrackermaps.ui.maps
 
 import android.graphics.Bitmap
 import android.graphics.Canvas
@@ -28,11 +28,8 @@ import android.text.style.ForegroundColorSpan
 import android.util.Log
 import android.view.View
 import android.view.animation.BounceInterpolator
-import android.widget.CheckBox
 import android.widget.ImageView
-import android.widget.RadioGroup
 import android.widget.SeekBar
-import android.widget.SeekBar.OnSeekBarChangeListener
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.ColorInt
@@ -55,11 +52,9 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
-import com.us.newui.maps.OnMapAndViewReadyListener
-import com.us.newui.maps.SamplesBaseActivity
-import com.us.quicktrack.R
 import java.util.ArrayList
 import java.util.Random
+import kotlin.invoke
 
 /**
  * This shows how to place markers on a map.
@@ -146,7 +141,7 @@ class MapsActivity :
             if (title != null) {
                 // Spannable string allows us to edit the formatting of the text.
                 titleUi.text = SpannableString(title).apply {
-                    setSpan(ForegroundColorSpan(Color.RED), 0, length, 0)
+                    setSpan(ForegroundColorSpan(Color.RED), 0, SpannableString.length, 0)
                 }
             } else {
                 titleUi.text = ""

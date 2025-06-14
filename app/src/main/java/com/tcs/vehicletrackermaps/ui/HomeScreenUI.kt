@@ -1,4 +1,4 @@
-package com.us.vehicletracker
+package com.tcs.vehicletrackermaps.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.us.vehicletracker.maps
+package com.tcs.vehicletrackermaps.ui.maps
 
 import android.annotation.SuppressLint
 import android.os.Build

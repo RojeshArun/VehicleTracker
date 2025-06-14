@@ -1,4 +1,4 @@
-package com.us.vehicletracker.maps
+package com.tcs.vehicletrackermaps.ui.maps
 
 import android.os.Bundle
 import android.view.View
